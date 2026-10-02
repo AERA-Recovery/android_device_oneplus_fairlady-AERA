@@ -27,13 +27,13 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 
-# Inherit from Infiniti device
-$(call inherit-product, device/oneplus/infiniti/device.mk)
+# Inherit from Fairlady device
+$(call inherit-product, device/oneplus/fairlady/device.mk)
 
-PRODUCT_DEVICE := infiniti
-PRODUCT_NAME := twrp_infiniti
+PRODUCT_DEVICE := fairlady
+PRODUCT_NAME := twrp_fairlady
 PRODUCT_BRAND := oneplus
-PRODUCT_MODEL := OnePlus 15
+PRODUCT_MODEL := OnePlus 15T
 PRODUCT_MANUFACTURER := oneplus
 
 PRODUCT_GMS_CLIENTID_BASE := android-oplus

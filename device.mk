@@ -8,7 +8,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
 
-LOCAL_PATH := device/oneplus/infiniti
+LOCAL_PATH := device/oneplus/fairlady
 
 # Shipping API level
 BOARD_SHIPPING_API_LEVEL := 34
@@ -28,7 +28,7 @@ PRODUCT_PACKAGES += \
     lpunpack \
     aera_thermal_guard
 
-# Infiniti/OnePlus 15 Adreno 840 backend. The ABI-matched KGSL module,
+# Fairlady/OnePlus 15T Adreno 840 backend. The ABI-matched KGSL module,
 # gen80200 firmware, EGL/GLES userspace, and mapper closure remain local to
 # this SM8850 device tree; generic AERA keeps its software fallback.
 PRODUCT_VENDOR_PROPERTIES += \
@@ -43,5 +43,5 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
 # Recovery-specific settings
-$(call inherit-product, $(LOCAL_PATH)/aera_infiniti.mk)
+$(call inherit-product, $(LOCAL_PATH)/aera_fairlady.mk)
 #

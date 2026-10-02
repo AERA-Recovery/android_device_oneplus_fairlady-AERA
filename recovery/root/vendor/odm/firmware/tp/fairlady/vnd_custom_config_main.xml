@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <custom>
-	<version>2025082501</version>
+	<version>2025122301</version>
 	<fwk-version>v5.0.0</fwk-version>
 	<modules id="charger" enable="true" hint="support charger detect?">
 		<param name="default" type="bool" hint="charger off: 0, charger on: 1">
@@ -19,7 +19,7 @@
 			<value>0</value>
 		</param>
 		<param name="range" type="[u32]" hint="">
-			<value>10160,32688,3200,3200</value>
+			<value>9728,30592,3200,3200</value>
 		</param>
 	</modules>
 
@@ -104,7 +104,7 @@
 	<modules id="refresh_report_sync_support" enable="true">
 		<param name="supports" type="[u32]" hint="">
 			<!-- refresh rate support sync -->
-			<value>60,120,144,165</value>
+			<value>0,60,120,144,165</value>
 		</param>
 	</modules>
 
@@ -180,7 +180,7 @@
 	</modules>
 	<modules id="click_sensitive_support" enable="true" hint="">
 		<param name="default" type="bool" hint="">
-			<value>1</value>
+			<value>0</value>
 		</param>
 	</modules>
 	<modules id="frame_insert_support" enable="true" hint="">
@@ -203,22 +203,28 @@
 			<value>1</value>
 		</param>
 	</modules>
-	<modules id="idlefreq_support" enable="true" hint="">
+	<modules id="idle_freq_support" enable="true" hint="">
 		<param name="default" type="bool" hint="">
 			<value>0</value>
 		</param>
 		<param name="supports" type="[u32]" hint="">
-			<value>1</value>
+			<value>0,1</value>
+		</param>
+	</modules>
+	<modules id="idle_holdofftime_support" enable="true" hint="">
+		<!-- ms -->
+		<param name="default" type="bool" hint="">
+			<value>300</value>
 		</param>
 	</modules>
 	<modules id="vsync_test_support" enable="true" hint="">
 		<param name="default" type="bool" hint="">
-			<value>1</value>
+			<value>0</value>
 		</param>
 	</modules>
 	<modules id="hsync_test_support" enable="true" hint="">
 		<param name="default" type="bool" hint="">
-			<value>1</value>
+			<value>0</value>
 		</param>
 	</modules>
 </custom>

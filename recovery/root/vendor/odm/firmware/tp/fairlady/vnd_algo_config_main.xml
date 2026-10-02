@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <algo>
-	<version>2025092601</version>
-	<algo-version>v2.0.9.85</algo-version>
+	<version>2026030901</version>
+	<algo-version>v2.0.22.266</algo-version>
 		<modules id="AlgoParam" enable="true" hint="">
 			<param name="prjId" type="u32" hint="">
-				<value>24831</value>
+				<value>25821</value>
 				<range>0,65530</range>
 			</param>
 			<param name="rxNumUse" type="u32" hint="">
-				<value>39</value>
+				<value>35</value>
 				<range>0,50</range>
 			</param>
 
 			<param name="txNumUse" type="u32" hint="">
-				<value>18</value>
+				<value>16</value>
 				<range>0,50</range>
 			</param>
 
 			<param name="maxMappingX" type="u32" hint="">
-				<value>20351</value>
+				<value>19455</value>
 				<range>0,30000</range>
 			</param>
 
 			<param name="maxMappingY" type="u32" hint="">
-				<value>44351</value>
+				<value>42239</value>
 				<range>0,60000</range>
 			</param>
 			<param name="sysFwkVer" type="u32" hint="">
@@ -32,11 +32,27 @@
 			</param>
 		</modules>
 		<modules id="Touch Threshold" enable="true" hint="">
+			<param name="enterIdleThd" type="u32" hint="">
+				<value>150</value>
+				<range>0,300</range>
+			</param>
+			<param name="boostenterIdleThd" type="u32" hint="">
+				<value>150</value>
+				<range>0,300</range>
+			</param>
 			<param name="posPeakThd" type="u32" hint="">
 				<value>180</value>
 				<range>0,300</range>
 			</param>
+			<param name="boostposPeakThd" type="u32" hint="">
+				<value>180</value>
+				<range>0,300</range>
+			</param>
 			<param name="touchDownThd" type="u32" hint="">
+				<value>225</value>
+				<range>0,500</range>
+			</param>
+			<param name="boosttouchDownThd" type="u32" hint="">
 				<value>225</value>
 				<range>0,500</range>
 			</param>
@@ -55,6 +71,20 @@
 			<param name="filmPeakMinLimitThd" type="u32" hint="">
 				<value>110</value>
 				<range>0,900</range>
+			</param>
+		</modules>
+		<modules id="FwFloatCompensate" enable="true" hint="">
+			<param name="exitFwFloatCompensateEn" type="u32" hint=""><!-- 退出固件悬浮补偿判断逻辑使能开关 -->
+				<value>1</value>
+				<range>0,10</range>
+			</param>
+			<param name="thickFilmThd" type="u32" hint=""><!-- 信号量阈值 -->
+				<value>700</value>
+				<range>0,10</range>
+			</param>
+			<param name="reduceFloatCompensateEn" type="u32" hint=""><!-- 贴膜游戏下悬浮补偿减弱使能开关 -->
+				<value>1</value>
+				<range>0,10</range>
 			</param>
 		</modules>
 		<modules id="Coord" enable="true" hint="">
@@ -94,23 +124,23 @@
 			</param>
 
 			<param name="pixelWidthTx" type="u32" hint="">
-				<value>1390,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1390,1280,1280</value>
+				<value>1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280</value>
 				<range>0,2000</range>
 			</param>
 
 			<param name="pixelWidthRx" type="u32" hint="">
-				<value>1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1334,1280</value>
+				<value>1416,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1280,1399,1280,1280,1280,1280,1280</value>
 				<range>0,1000</range>
 			</param>
 
 			<param name="rowCompensate" type="u32" hint="">
-				<value>-726,-128,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,128,726,0,0</value>
-				<range>-1000,1000</range>
+				<value>-945,-155,0,0,0,0,0,0,0,0,0,0,0,0,0,155,945,0,0,0,0</value>
+				<range>-2000,2000</range>
 			</param>
 
 			<param name="colCompensate" type="u32" hint="">
-				<value>-994,-158,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,158,994,0</value>
-				<range>-1000,1000</range>
+				<value>-828,-155,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,155,1000,0,0,0,0,0</value>
+				<range>-2000,2000</range>
 			</param>
 
 			<param name="pixelGainRows" type="u32" hint="">
@@ -139,30 +169,42 @@
 				<range>0,512</range>
 			</param>
 			<param name="XLeftEdgeScale" type="u32" hint="">
-				<value>18</value>
+				<value>11</value>
 				<range>0,512</range>
 			</param>
 			<param name="XRightEdgeScale" type="u32" hint="">
-				<value>18</value>
+				<value>11</value>
 				<range>0,512</range>
 			</param>
 			<param name="YLeftEdgeScale" type="u32" hint="">
-				<value>11</value>
+				<value>15</value>
 				<range>0,512</range>
 			</param>
 			<param name="YRightEdgescale" type="u32" hint="">
-				<value>11</value>
+				<value>13</value>
 				<range>0,512</range>
 			</param>
 			<param name="XStretchEdgeStart" type="u32" hint="">
-				<value>527</value>
+				<value>532</value>
 				<range>0,1000</range>
 			</param>
 			<param name="YStretchEdgeStart" type="u32" hint="">
-				<value>485</value>
+				<value>541</value>
 				<range>0,1000</range>
 			</param>
 			<param name="frontFilterEn" type="u32" hint="">
+				<value>1</value>
+				<range>0,10</range>
+			</param>
+			<param name="shadowFilterLevel" type="u32" hint="">
+				<value>6</value>
+				<range>0,10</range>
+			</param>
+			<param name="coordKalmForAbnormalFingerEn" type="u32" hint=""><!-- 是否对于异形手指全程开启前端卡尔曼滤波 -->
+				<value>1</value>
+				<range>0,10</range>
+			</param>
+			<param name="disAttenuationProjectionEn" type="u32" hint=""><!-- 是否使用根据距离对电容值进行衰减 -->
 				<value>1</value>
 				<range>0,10</range>
 			</param>
@@ -224,7 +266,7 @@
 			</param>
 
 			<param name="NOTCH_GAIN_EN" type="u32" hint="">
-				<value>0</value>
+				<value>1</value>
 				<range>0,1</range>
 			</param>
 			<param name="FILM_EN" type="u32" hint="">
@@ -282,7 +324,7 @@
 				<range>0,1000</range>
 			</param>
 			<param name="pixelPitchUsed" type="u32" hint="">
-				<value>565</value>
+				<value>552</value>
 				<range>0,2500</range>
 			</param>
 
@@ -303,6 +345,16 @@
 
 			<param name="liftLockLength" type="u32" hint="">
 				<value>1410</value>
+				<range>0,10000</range>
+			</param>
+
+			<param name="gameLandLockLength" type="u32" hint="">
+				<value>800</value>
+				<range>0,10000</range>
+			</param>
+
+			<param name="gameStableLockLength" type="u32" hint="">
+				<value>600</value>
 				<range>0,10000</range>
 			</param>
 
@@ -397,6 +449,10 @@
 				<value>1600</value>
 				<range>0,5000</range>
 			</param>
+			<param name="boostMaxSpeed" type="u32" hint="">
+				<value>600</value>
+				<range>0,5000</range>
+			</param>
 			<param name="reduceDistance" type="u32" hint="">
 				<value>40</value>
 				<range>0,5000</range>
@@ -437,6 +493,46 @@
 				<value>1</value>
 				<range>0,10</range>
 			</param>
+			<param name="rapidDelayOptEn" type="u32" hint="">
+				<value>1</value>
+				<range>0,10</range>
+			</param>
+			<param name="rapidDelayThd" type="u32" hint="">
+				<value>3</value>
+				<range>0,10</range>
+			</param>
+			<param name="rapidModeKeepLockMs" type="u32" hint="">
+				<value>85</value>
+				<range>0,1000</range>
+			</param>
+			<param name="rapidModeStableCheckEndMs" type="u32" hint="">
+				<value>95</value>
+				<range>0,1000</range>
+			</param>
+			<param name="lineCountThd" type="u32" hint="">
+				<value>2</value>
+				<range>0,10</range>
+			</param>
+			<param name="islineMode" type="u32" hint="">
+				<value>0</value>
+				<range>0,10</range>
+			</param>
+			<param name="slideUpThdRatio" type="u32" hint="">
+				<value>99</value>
+				<range>0,100</range>
+			</param>
+			<param name="swipeVecOptEn" type="u32" hint="">
+				<value>1</value>
+				<range>0,10</range>
+			</param>
+			<param name="handleCoefficient" type="u32" hint="">
+				<value>10</value>
+				<range>0,100</range>
+			</param>
+			<param name="boostFlag" type="u32" hint="">
+				<value>1</value>
+				<range>0,10</range>
+			</param>
 		</modules>
 
 		<modules id="Lock" enable="true" hint="">
@@ -465,11 +561,15 @@
 				<range>0,1000</range>
 			</param>
 			<param name="relockLockRThdCfg" type="u32" hint="">
-				<value>200</value>
+				<value>180</value>
 				<range>0,1000</range>
 			</param>
 			<param name="relockShiftRThdCfg" type="u32" hint="">
 				<value>400</value>
+				<range>0,1000</range>
+			</param>
+			<param name="minPredOffsetCfg" type="u32" hint="">
+				<value>30</value>
 				<range>0,1000</range>
 			</param>
 		</modules>
@@ -610,32 +710,32 @@
 		</modules>
 		<modules id="FP" enable="true" hint="">
 			<param name="fpSpotCenterX" type="u32" hint="">
-				<value>10160</value>
+				<value>9728</value>
 				<range>0,20000</range>
 			</param>
 
 			<param name="fpSpotCenterY" type="u32" hint="">
-				<value>32688</value>
+				<value>30592</value>
 				<range>0,50000</range>
 			</param>
 
 			<param name="fpSpotRxStart" type="u32" hint="">
-				<value>27</value>
+				<value>23</value>
 				<range>0,50</range>
 			</param>
 
 			<param name="fpSpotRxEnd" type="u32" hint="">
-				<value>30</value>
+				<value>27</value>
 				<range>0,50</range>
 			</param>
 
 			<param name="fpSpotTxStart" type="u32" hint="">
-				<value>7</value>
+				<value>6</value>
 				<range>0,50</range>
 			</param>
 
 			<param name="fpSpotTxEnd" type="u32" hint="">
-				<value>10</value>
+				<value>9</value>
 				<range>0,50</range>
 			</param>
 
@@ -648,7 +748,7 @@
 				<range>0,65000</range>
 			</param>
 			<param name="touchFpAreaNumThd" type="u32" hint="">
-				<value>11</value>
+				<value>13</value>
 				<range>0,50</range>
 			</param>
 			<param name="touchFpUpAreaNumThd" type="u32" hint="">
@@ -686,7 +786,7 @@
 				<range>0,1000</range>
 			</param>
 			<param name="posPeakNoiseThd" type="u32" hint="">
-				<value>190</value>
+				<value>150</value>
 				<range>0,1000</range>
 			</param>
 			<param name="touchDownNoiseThd" type="u32" hint="">
@@ -856,10 +956,10 @@
 				<range>0,100</range>
 			</param>
 			<param name="panel-coords" type="u32" hint="max_x max_y">
-				<value>20352,44352</value>
+				<value>19456,42240</value>
 			</param>
 			<param name="tx-rx-num" type="u32" hint="" >
-				<value>18,39</value>
+				<value>16,35</value>
 			</param>
 			<param name="grip_disable_level" type="u32" hint="" >
 				<value>6</value>
@@ -883,7 +983,10 @@
 				<value>500,50,30</value>
 			</param>
 			<param name="prevention,large_exit_condition" type="u32" hint="" >
-				<value>8,8,2</value>
+				<value>12,8,2</value>
+			</param>
+			<param name="prevention,large_exit_condition_game" type="u32" hint="" >
+				<value>100,8,1,0</value>
 			</param>
 			<param name="prevention,single_channel_width" type="u32" hint="" >
 				<value>603,603</value>
@@ -912,11 +1015,17 @@
 			<param name="prevention,long_strict_edge_condition" type="u32" hint="" >
 				<value>190,80</value>
 			</param>
+			<param name="prevention,long_strict_edge_condition_game" type="u32" hint="" >
+				<value>255,120</value>
+			</param>
 			<param name="prevention,short_strict_edge_condition" type="u32" hint="" >
 				<value>160,80</value>
 			</param>
 			<param name="prevention,large_strict_exit_condition" type="u32" hint="" >
 				<value>6,6</value>
+			</param>
+			<param name="prevention,large_strict_exit_condition_game" type="u32" hint="" >
+				<value>100,6</value>
 			</param>
 			<param name="prevention,corner_move_rejected" type="u32" hint="" >
 				<value>0</value>
@@ -931,7 +1040,7 @@
 				<value>1</value>
 			</param>
 			<param name="prevention,long_fingerhold_condition2" type="u32" hint="" >
-				<value>640,3209,0,0</value>
+				<value>320,3209,0,0</value>
 			</param>
 			<param name="prevention,top_corner_config2" type="u32" hint="" >
 				<value>3,80,600,1124,0</value>
@@ -940,13 +1049,13 @@
 				<value>350,2270</value>
 			</param>
 			<param name="prevention,top_middle_config" type="u32" hint="" >
-				<value>20351,500,1600,1</value>
+				<value>19455,500,1600,1</value>
 			</param>
 			<param name="prevention,corner_eliminate_point_type" type="u32" hint="" >
 				<value>0,1380,2280,1</value>
 			</param>
 			<param name="prevention,long_eliminate_point_type" type="u32" hint="" >
-				<value>2,20351,16896,640,44351,300,1</value>
+				<value>2,19455,16896,640,42239,300,1</value>
 			</param>
 			<param name="prevention,finger_hold_differ_size" type="u32" hint="" >
 				<value>1,0,640,300</value>
@@ -967,7 +1076,7 @@
 				<value>1</value>
 			</param>
 			<param name="prevention,long_eliminate_point_type_recli" type="u32" hint="" >
-				<value>2,20351,16896,800,44351,500,1</value>
+				<value>2,19455,16896,800,42239,500,1</value>
 			</param>
 			<param name="prevention,finger_hold_differ_size_recli" type="u32" hint="" >
 				<value>1,0,640,300</value>
@@ -986,6 +1095,9 @@
 			</param>
 			<param name="prevention,long_edge_condition_recli" type="u32" hint="" >
 				<value>210,90,120,80</value>
+			</param>
+			<param name="prevention,long_edge_condition_game" type="u32" hint="" >
+				<value>255,90,120,80,0</value>
 			</param>
 			<param name="prevention,large_corner_judge_condition_ime" type="u32" hint="" >
 				<value>300,0,0,0,0</value>
@@ -1127,19 +1239,19 @@
 				<range>0,8</range>
 			</param>
 			<param name="NotchSensor0" type="u32" hint="">
-				<value>8,0,256,0,0,30,0</value> <!-- TX, RX, peak补偿, peak up补偿值, peak down补偿值, peak left补偿值, peak right补偿值 -->
+				<value>7,0,256,15,30,0,30</value> <!-- TX, RX, peak补偿, peak up补偿值, peak down补偿值, peak left补偿值, peak right补偿值 -->
 				<range>0,512</range>
 			</param>
 			<param name="NotchSensor1" type="u32" hint="">
-				<value>9,0,256,0,0,30,0</value>
+				<value>8,0,256,30,15,0,30</value>
 				<range>0,512</range>
 			</param>
 			<param name="NotchSensor2" type="u32" hint="">
-				<value>8,1,256,0,0,40,0</value>
+				<value>7,1,256,15,30,30,15</value>
 				<range>0,512</range>
 			</param>
 			<param name="NotchSensor3" type="u32" hint="">
-				<value>9,1,256,0,0,40,0</value>
+				<value>8,1,256,30,15,30,15</value>
 				<range>0,512</range>
 			</param>
 		</modules>
@@ -1185,7 +1297,7 @@
 		</modules>
 		<modules id="TouchSize" enable="true" hint="">
 			<param name="pixelDis" type="u32" hint="">
-				<value>390</value>
+				<value>410</value>
 				<range>0,500</range>
 			</param>
 
@@ -1237,6 +1349,12 @@
 			<param name="FOR_TEST" type="u32" hint="">
 				<value>1,11,11,0,0</value>
 				<range>0,1000</range>
+			</param>
+		</modules>
+		<modules id="AbnormalFrameDetect" enable="true" hint="">
+			<param name="ABNORMAL_FRAME_DETECT_EN" type="u32" hint="">
+				<value>1</value><!-- 是否开启异常帧检测丢弃 -->
+				<range>0,10</range>
 			</param>
 		</modules>
 </algo>

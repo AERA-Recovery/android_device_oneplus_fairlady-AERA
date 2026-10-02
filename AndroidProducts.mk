@@ -9,9 +9,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_infiniti.mk
+    $(LOCAL_DIR)/twrp_fairlady.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_infiniti-user \
-    twrp_infiniti-userdebug \
-    twrp_infiniti-eng
+    twrp_fairlady-user \
+    twrp_fairlady-userdebug \
+    twrp_fairlady-eng

@@ -17,7 +17,7 @@
 #
 # 	Please maintain this if you use this script or any part of it
 #
-FDEVICE="infiniti"
+FDEVICE="fairlady"
 
 aera_get_target_device() {
 local chkdev=$(echo "$BASH_SOURCE" | grep -w $FDEVICE)
@@ -59,8 +59,8 @@ if [ "$1" = "$FDEVICE" -o "$AERA_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export AERA_SETTINGS_ROOT_DIRECTORY=/data/recovery
 	export AERA_MISCELLANEOUS_ROOT_DIRECTORY=/sdcard
 
-	# For OnePlus 15
-	export TARGET_DEVICE_ALT="PLK110,OP611FL1,OP60FFL1,CPH2745,CPH2747,CPH2749"
+	# For OnePlus 15T
+	export TARGET_DEVICE_ALT="PLZ110,OP64DDL1"
 	export AERA_TARGET_DEVICES="$TARGET_DEVICE_ALT"
 	export AERA_USE_DMSETUP=1
 	export AERA_ENABLE_KERNELSU_SUPPORT=1

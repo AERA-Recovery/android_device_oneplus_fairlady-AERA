@@ -1,5 +1,5 @@
 ﻿<filter-conf>
-    <version>2025100901</version>
+    <version>2025121501</version>
     <isOpen>1</isOpen>
     <filter-name>sys_scene_touch_config</filter-name>
 
@@ -83,6 +83,33 @@
 			<packages>
 				<!--本配置针对应用的包名列表 -->
 				<pkg_list>
+					<item name="com.tencent.ig" /> <!--PUBG-->
+				</pkg_list>
+				<default>
+					<command name="set_package_type"	value="mod para_effect set_package_type:4118"/>
+				</default>
+			</packages>
+			<packages>
+				<!--本配置针对应用的包名列表 -->
+				<pkg_list>
+					<item name="com.dts.freefireth" /> <!--Free Fire-->
+				</pkg_list>
+				<default>
+					<command name="set_package_type"	value="mod para_effect set_package_type:4119"/>
+				</default>
+			</packages>
+			<packages>
+				<!--本配置针对应用的包名列表 -->
+				<pkg_list>
+					<item name="com.tencent.tmgp.codev" /> <!--无畏契约-->
+				</pkg_list>
+				<default>
+					<command name="set_package_type"	value="mod para_effect set_package_type:4120"/>
+				</default>
+			</packages>
+			<packages>
+				<!--本配置针对应用的包名列表 -->
+				<pkg_list>
 					<item name="com.tencent.tmgp.sgame" /> <!--王者荣耀-->
 				</pkg_list>
 				<default>
@@ -119,6 +146,15 @@
 			<packages>
 				<!--本配置针对应用的包名列表 -->
 				<pkg_list>
+					<item name="com.tencent.nfsonline" /> <!--极品飞车-->
+				</pkg_list>
+				<default>
+					<command name="set_package_type"	value="mod para_effect set_package_type:4146"/>
+				</default>
+			</packages>
+			<packages>
+				<!--本配置针对应用的包名列表 -->
+				<pkg_list>
 					<item name="com.android.launcher" /> <!--桌面-->
 				</pkg_list>
 				<default>
@@ -141,6 +177,24 @@
 				</pkg_list>
 				<default>
 					<command name="set_package_type"	value="mod para_effect set_package_type:28674"/>
+				</default>
+			</packages>
+			<packages>
+				<!--本配置针对应用的包名列表 -->
+				<pkg_list>
+					<item name="com.antutu.ABenchMark" /> <!--安兔兔-->
+				</pkg_list>
+				<default>
+					<command name="set_package_type"	value="mod para_effect set_package_type:32768"/>
+				</default>
+			</packages>
+			<packages>
+				<!--本配置针对应用的包名列表 -->
+				<pkg_list>
+					<item name="com.ludashi.benchmark" /> <!--鲁大师-->
+				</pkg_list>
+				<default>
+					<command name="set_package_type"	value="mod para_effect set_package_type:32769"/>
 				</default>
 			</packages>
 		</device>

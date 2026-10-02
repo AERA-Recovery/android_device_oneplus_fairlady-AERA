@@ -46,7 +46,7 @@ service post-boot-script /system/bin/sh -c /vendor/bin/init.kernel.post_boot-can
     oneshot
     seclabel u:r:recovery:s0
 
-# The installed OP15 partitions provide the ABI-matched Qualcomm audio
+# The installed OnePlus 15T partitions provide the ABI-matched Qualcomm audio
 # libraries and DSP payload. The small device-local launchers remain disabled
 # until AERA has mounted those partitions read-only after decryption.
 service aera-pd-mapper /vendor/bin/aera-pd-mapper
@@ -84,7 +84,7 @@ service aera-oplus-charger /mnt/aera-stock/odm/bin/hw/vendor.oplus.hardware.char
     setenv LD_LIBRARY_PATH /vendor/aera-audio-abi:/vendor/aera-stock-lib64:/mnt/aera-stock/odm/lib64:/vendor/lib64:/system/lib64
     interface aidl vendor.oplus.hardware.charger.ICharger/default
 
-service aera-agm-service /system/bin/aera-audio-service --infiniti-stock-agm
+service aera-agm-service /system/bin/aera-audio-service --fairlady-stock-agm
     class main
     disabled
     seclabel u:r:recovery:s0

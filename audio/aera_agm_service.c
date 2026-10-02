@@ -4,7 +4,7 @@
  *
  * Small recovery-side host for Qualcomm's device-matched AGM implementation.
  * The proprietary implementation remains on the installed stock /vendor and
- * is loaded only on Infiniti. Plugins never receive /dev/snd or partition access.
+ * is loaded only on Fairlady. Plugins never receive /dev/snd or partition access.
  */
 #include <android/binder_ibinder.h>
 #include <android/binder_process.h>
@@ -65,9 +65,9 @@ static void* RegisterServiceLibrary(const char* path, const char* descriptor,
 }
 
 int main(int argc, char** argv) {
-  if (argc != 2 || strcmp(argv[1], "--infiniti-stock-agm") != 0) {
+  if (argc != 2 || strcmp(argv[1], "--fairlady-stock-agm") != 0) {
     Log(ANDROID_LOG_ERROR,
-        "Refusing to start without the Infiniti stock AGM mode.");
+        "Refusing to start without the Fairlady stock AGM mode.");
     return 64;
   }
   if (getuid() != 0 || access(kAgmService, R_OK) != 0 ||
@@ -80,18 +80,18 @@ int main(int argc, char** argv) {
   ABinderProcess_startThreadPool();
 
   void* agm_library = RegisterServiceLibrary(
-      kAgmService, "vendor.qti.hardware.agm.IAGM/default", "Infiniti stock AGM");
+      kAgmService, "vendor.qti.hardware.agm.IAGM/default", "Fairlady stock AGM");
   if (!agm_library) {
     return 70;
   }
   void* pal_library = RegisterServiceLibrary(
-      kPalService, "vendor.qti.hardware.pal.IPAL/default", "Infiniti stock PAL");
+      kPalService, "vendor.qti.hardware.pal.IPAL/default", "Fairlady stock PAL");
   if (!pal_library) {
     dlclose(agm_library);
     return 70;
   }
 
-  Log(ANDROID_LOG_INFO, "Infiniti stock AGM/PAL audio services are ready.");
+  Log(ANDROID_LOG_INFO, "Fairlady stock AGM/PAL audio services are ready.");
   ABinderProcess_joinThreadPool();
   Log(ANDROID_LOG_ERROR, "Audio Binder thread pool exited unexpectedly.");
   dlclose(pal_library);
