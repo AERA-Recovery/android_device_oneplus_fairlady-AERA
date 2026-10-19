@@ -23,8 +23,10 @@
  AERA_SCREEN_H := 2340
  AERA_STATUS_H := 135
  AERA_HIDE_NOTCH := 1
- AERA_STATUS_INDENT_LEFT := 70
- AERA_STATUS_INDENT_RIGHT := 50
+ # Keep status content clear of the panel's rounded upper corners.
+ # These insets use AERA UI's 1440-wide logical coordinate space.
+ AERA_STATUS_INDENT_LEFT := 100
+ AERA_STATUS_INDENT_RIGHT := 100
  AERA_OPTIONS_LIST_NUM := 6
  AERA_USE_GREEN_LED := 0
  AERA_FL_PATH1 := /sys/class/leds/white:flash-1
